@@ -1,0 +1,13 @@
+{
+    "owner": "Red",
+    "units":[
+        {
+            "name": "Infantry 1",
+            "power": 5,
+            "range": [0, 1],        
+            "health": 5,
+            "speed": 2,
+            "amount": 100
+        }
+    ]
+}
