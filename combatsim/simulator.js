@@ -17,12 +17,23 @@ const army1 = {
     "side": "A",
     "units":[
         {
-            "name": "Hundred",
-            "power": 5,
+            "name": "Rookies",
+            "power": 6,
             "range": [0, 1],        
-            "health": 5,
+            "health": 40,
             "speed": 2,
-            "amount": 100
+            "amount": 80,
+            "maxtroops": 80
+        },
+        {
+            "name": "Legion",
+            "power": 10,
+            "range": [0, 1],        
+            "health": 50,
+            "speed": 2,
+            "amount": 40,
+            "maxtroops": 40
+            
         }
     ]
 };
@@ -34,11 +45,12 @@ const army2 = {
     "units":[
         {
             "name": "Mob",
-            "power": 5,
+            "power": 20,
             "range": [0, 1],        
-            "health": 5,
+            "health": 60,
             "speed": 2,
-            "amount": 100
+            "amount": 50,
+            "maxtroops": 45
         }
     ]
 };
@@ -48,7 +60,7 @@ const location = {
 };
 
 const CONFIG = {
-    rounds: 4,
+    rounds: 12,
     arenaWidth: 8
 };
 
