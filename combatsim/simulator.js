@@ -1,5 +1,9 @@
 const fs = require("fs");
-const combat = require('./combat.js');
+const combat = require('./combatFunc.js');
+
+const Army = require('./Army.js');
+const Location = require('./Location.js');
+const Combat = require('./Combat.js');
 
 // Loading armies as json from file, no error handling as this is just for simulating battles. Errors should crash and burn this down.
 function loadArmyJson(jsonFileName) {
@@ -11,63 +15,89 @@ function loadArmyJson(jsonFileName) {
 // const army2 = loadArmyJson(process.argv[3] !== undefined ? process.argv[3] : "./army1.json");
 
 
-const army1 = {
+const armyData1 = {
     "owner": "Rome",
     "name": "Laudanum",
     "side": "A",
+    "id": "rome",
     "units":[
         {
-            "name": "Rookies",
-            "power": 6,
-            "range": [0, 1],        
-            "health": 40,
-            "speed": 2,
-            "amount": 80,
-            "maxtroops": 80
-        },
-        {
+            "id": "inf001",
             "name": "Legion",
             "power": 10,
             "range": [0, 1],        
             "health": 50,
             "speed": 2,
-            "amount": 40,
-            "maxtroops": 40
-            
+            "amount": 50,
+            "maxtroops": 50,
+            "injured": [],
+            "morale": 100,
+            "experience": 0
+        },
+        {
+            "id": "arch001",
+            "name": "Archers",
+            "power": 8,
+            "range": [2, 4],        
+            "health": 30,
+            "speed": 1,
+            "amount": 50,
+            "maxtroops": 50,
+            "injured": [],
+            "morale": 100,
+            "experience": 0
         }
+        
     ]
 };
 
-const army2 = {
+const armyData2 = {
     "owner": "Gauls",
     "name": "Invincible Village",
     "side": "B",
+    "id": "gauls",
     "units":[
         {
+            "id": "mob001",
             "name": "Mob",
             "power": 20,
             "range": [0, 1],        
             "health": 60,
             "speed": 2,
             "amount": 50,
-            "maxtroops": 45
+            "maxtroops": 50,
+            "injured": [],
+            "morale": 100,
+            "experience": 0
         }
     ]
 };
 
-const location = {
+// const location = {
+//     size: 8
+// };
 
-};
+// const CONFIG = {
+//     rounds: 12
+// };
 
-const CONFIG = {
-    rounds: 12,
-    arenaWidth: 8
-};
+const loc = new Location();
+
+const army1 = new Army(armyData1);
+const army2 = new Army(armyData2);
+
+const battle = new Combat(loc,{sides: ["Red", "Blue"]});
+
+battle.addArmy(army1, "Red");
+battle.addArmy(army2, "Blue");
+
+battle.start();
 
 
-combat([army1, army2], location, CONFIG);
 
 
+// const armies = combat([army1, army2], location, CONFIG);
+// console.log(armies);
 
 
 
