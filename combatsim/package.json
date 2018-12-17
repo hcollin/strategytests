@@ -1,0 +1,7 @@
+{
+  "name": "combatsim",
+  "version": "1.0.0",
+  "main": "simulator.js",
+  "author": "Henrik Collin <hcollin78@gmail.com>",
+  "license": "MIT"
+}
