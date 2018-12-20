@@ -3,5 +3,9 @@
   "version": "1.0.0",
   "main": "simulator.js",
   "author": "Henrik Collin <hcollin78@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "immer": "^1.9.2",
+    "redux": "^4.0.1"
+  }
 }

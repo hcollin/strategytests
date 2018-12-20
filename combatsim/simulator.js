@@ -1,5 +1,6 @@
 const fs = require("fs");
 const combat = require('./combat.js');
+const battle = require('./combat2.js');
 
 // Loading armies as json from file, no error handling as this is just for simulating battles. Errors should crash and burn this down.
 function loadArmyJson(jsonFileName) {
@@ -56,7 +57,7 @@ const army2 = {
 };
 
 const location = {
-
+    size: 8
 };
 
 const CONFIG = {
@@ -65,7 +66,9 @@ const CONFIG = {
 };
 
 
-combat([army1, army2], location, CONFIG);
+const results = battle([army1, army2], location);
+
+// combat([army1, army2], location, CONFIG);
 
 
 
